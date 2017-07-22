@@ -29,6 +29,7 @@
     "@types/node": "^7.0.10",
     "@types/zone.js": "0.0.27",
     "async": "^2.0.1",
+    "aws-sdk": "^2.88.0",
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "chai": "^3.5.0",
