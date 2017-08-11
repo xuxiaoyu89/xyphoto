@@ -27,7 +27,7 @@ var server = http.createServer(app);
  */
 
 server.listen(port, function () {
-  logger.info('XYAuth listening on port ' + port);
+  logger.info('XYPhoto listening on port ' + port);
 });
 
 server.on('error', onError);
