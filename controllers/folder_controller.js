@@ -1,6 +1,6 @@
 const Promise = require('bluebird');
-const Folder = require('../models').Folder;
-const File = require('../models').File;
+const File = require('../models/file.js');
+const Folder = require('../models/folder.js');;
 
 const FolderController = {
   open: async (req, res, next) => {
@@ -17,8 +17,6 @@ const FolderController = {
 };
 
 async function openFolder(folderID) {
-  console.log('in open function');
-  console.log(Folder);
   // get all the folders in the folderID
   const query = Promise.promisify(Folder.query);
   const folders = await query({
@@ -28,7 +26,6 @@ async function openFolder(folderID) {
   const files = await query({
     parent_id: {eq: folderID}
   });
-  console.log(folders);
   return { folders, files };
 }
 
