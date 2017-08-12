@@ -1,4 +1,4 @@
-const db = require('../models/db.js');
+const db = require('./db.js');
 const logger = require('../lib/util/logger.js');
 
 const tableName = 'Folder';

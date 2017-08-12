@@ -1,7 +1,7 @@
 const fileSeeds = [
   {
     file_id: '1',
-    parent_id: '1',
+    parent_folder_id: '1',
     user_id: 'user_1',
     file_type: 'image',
     file_url: 'https://s3.amazonaws.com/xyphoto/cat.jpg',
@@ -15,7 +15,7 @@ const fileSeeds = [
   },
   {
     file_id: '2',
-    parent_id: '1',
+    parent_folder_id: '1',
     user_id: 'user_1',
     file_type: 'image',
     file_url: 'https://s3.amazonaws.com/xyphoto/cat.jpg',
@@ -29,7 +29,7 @@ const fileSeeds = [
   },
   {
     file_id: '3',
-    parent_id: '1',
+    parent_folder_id: '1',
     user_id: 'user_1',
     file_type: 'image',
     file_url: 'https://s3.amazonaws.com/xyphoto/cat.jpg',
@@ -43,7 +43,7 @@ const fileSeeds = [
   },
   {
     file_id: '4',
-    parent_id: '1',
+    parent_folder_id: '1',
     user_id: 'user_1',
     file_type: 'image',
     file_url: 'https://s3.amazonaws.com/xyphoto/cat.jpg',
@@ -57,7 +57,7 @@ const fileSeeds = [
   },
   {
     file_id: '5',
-    parent_id: '5',
+    parent_folder_id: '5',
     user_id: 'user_1',
     file_type: 'image',
     file_url: 'https://s3.amazonaws.com/xyphoto/cat.jpg',
@@ -71,7 +71,7 @@ const fileSeeds = [
   },
   {
     file_id: '6',
-    parent_id: '6',
+    parent_folder_id: '6',
     user_id: 'user_1',
     file_type: 'image',
     file_url: 'https://s3.amazonaws.com/xyphoto/cat.jpg',
@@ -85,7 +85,7 @@ const fileSeeds = [
   },
   {
     file_id: '7',
-    parent_id: '7',
+    parent_folder_id: '7',
     user_id: 'user_1',
     file_type: 'image',
     file_url: 'https://s3.amazonaws.com/xyphoto/cat.jpg',
@@ -99,7 +99,7 @@ const fileSeeds = [
   },
   {
     file_id: '8',
-    parent_id: '8',
+    parent_folder_id: '8',
     user_id: 'user_1',
     file_type: 'image',
     file_url: 'https://s3.amazonaws.com/xyphoto/cat.jpg',
@@ -113,7 +113,7 @@ const fileSeeds = [
   },
   {
     file_id: '9',
-    parent_id: '9',
+    parent_folder_id: '9',
     user_id: 'user_1',
     file_type: 'image',
     file_url: 'https://s3.amazonaws.com/xyphoto/cat.jpg',
