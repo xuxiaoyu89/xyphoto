@@ -18,13 +18,14 @@ const FolderController = {
 
 async function openFolder(folderID) {
   // get all the folders in the folderID
-  const query = Promise.promisify(Folder.query);
-  const folders = await query({
-    parent_id: {eq: folderID}
+  const queryFolder = Promise.promisify(Folder.query);
+  const folders = await queryFolder({
+    parent_folder_id: {eq: folderID}
   });
   // get all the files in the folderID
-  const files = await query({
-    parent_id: {eq: folderID}
+  const queryFile = Promise.promisify(File.query);
+  const files = await queryFile({
+    parent_folder_id: {eq: folderID}
   });
   return { folders, files };
 }

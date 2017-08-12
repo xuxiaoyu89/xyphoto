@@ -23,7 +23,6 @@ const FileTable = {
     return db.createTable(params).promise();
   },
   delete: async () => {
-    logger.info('db: ', db);
     logger.info('deleting File table');
     return db.deleteTable({TableName: tableName}).promise();
   }

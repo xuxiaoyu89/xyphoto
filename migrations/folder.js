@@ -8,16 +8,16 @@ const FolderTable = {
     let params = {
       TableName: tableName,
       KeySchema: [
-        { AttributeName: 'user_id', KeyType: 'HASH' }, // partition
+        { AttributeName: 'parent_folder_id', KeyType: 'HASH' }, // partition
         { AttributeName: 'folder_id', KeyType: 'RANGE' }  // sort 
       ],
       AttributeDefinitions: [
-        { AttributeName: 'user_id', AttributeType: 'S' },
+        { AttributeName: 'parent_folder_id', AttributeType: 'S' },
         { AttributeName: 'folder_id', AttributeType: 'S' }
       ],
       ProvisionedThroughput: {       
-        ReadCapacityUnits: 5, 
-        WriteCapacityUnits: 5
+        ReadCapacityUnits: 1, 
+        WriteCapacityUnits: 1
       }
     }
     return db.createTable(params).promise();

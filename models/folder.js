@@ -2,7 +2,7 @@ const dynamoose = require('./db.js');
 const Schema = dynamoose.Schema;
 
 const folderSchema = new Schema({
-  user_id: {
+  parent_folder_id: {
     type: String,
     hashKey: true
   },
@@ -10,10 +10,10 @@ const folderSchema = new Schema({
     type: String, // md5 of user_id + timestamp
     rangeKey: true
   },
-  folder_name: {
+  user_id: {
     type: String
   },
-  parent_folder_id: {
+  folder_name: {
     type: String
   },
   file_count: {
