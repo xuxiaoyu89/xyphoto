@@ -6,7 +6,7 @@ const fileSchema = new Schema({
     type: String,
     rangeKey: true
   },
-  parent_id: {
+  parent_folder_id: {
     type: String,
     hashKey: true
   },
@@ -14,6 +14,12 @@ const fileSchema = new Schema({
     type: String
   },
   file_type: {
+    type: String
+  },
+  file_url: {
+    type: String
+  },
+  file_thumbnail_url: {
     type: String
   },
   size: {

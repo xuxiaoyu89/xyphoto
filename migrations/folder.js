@@ -1,4 +1,4 @@
-const db = require('../models');
+const db = require('../models/db.js');
 const logger = require('../lib/util/logger.js');
 
 const tableName = 'Folder';
@@ -8,11 +8,11 @@ const FolderTable = {
     let params = {
       TableName: tableName,
       KeySchema: [
-        { AttributeName: 'parent_id', KeyType: 'HASH' }, // partition
+        { AttributeName: 'user_id', KeyType: 'HASH' }, // partition
         { AttributeName: 'folder_id', KeyType: 'RANGE' }  // sort 
       ],
       AttributeDefinitions: [
-        { AttributeName: 'parent_id', AttributeType: 'S' },
+        { AttributeName: 'user_id', AttributeType: 'S' },
         { AttributeName: 'folder_id', AttributeType: 'S' }
       ],
       ProvisionedThroughput: {       
