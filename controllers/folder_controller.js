@@ -1,33 +1,35 @@
-const Promise = require('bluebird');
 const File = require('../models/file.js');
-const Folder = require('../models/folder.js');;
+const Folder = require('../models/folder.js');
+const FolderService = require('../services/folder_service.js');
+const logger = require('../lib/util/logger.js');
 
 const FolderController = {
+  // return folders and files in this folder
   open: async (req, res, next) => {
     req = req.body;
     let folderID = req.folder_id;
     let result;
     try { 
-      result = await openFolder(folderID);
+      result = await FolderService.openFolder(folderID);
     } catch (err) {
       next(err);
     }
     res.status(200).send(result);
+  },
+
+  // create a new folder in the current folder
+  create: async (req, res, next) => {
+    req = req.body;
+    let parentFolderID = req.parent_folder_id;
+    let folderName = req.folder_name;
+    let newFolder = null;
+    try {
+      newFolder = await FolderService.createFolder(parentFolderID, folderName);
+    } catch (err){
+      return next(err);
+    }
+    res.status(200).send(newFolder);
   }
 };
-
-async function openFolder(folderID) {
-  // get all the folders in the folderID
-  const queryFolder = Promise.promisify(Folder.query);
-  const folders = await queryFolder({
-    parent_folder_id: {eq: folderID}
-  });
-  // get all the files in the folderID
-  const queryFile = Promise.promisify(File.query);
-  const files = await queryFile({
-    parent_folder_id: {eq: folderID}
-  });
-  return { folders, files };
-}
 
 module.exports = FolderController;

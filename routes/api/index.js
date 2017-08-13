@@ -9,10 +9,10 @@ const FolderController = require('../../controllers/folder_controller.js');
 router.post('/open', FolderController.open); // return all files and folders in folder with parentID
 //router.post('/search', (params) => {});
  
-/*// write api
 // add a new folder
-router.post('/add-folder', (name, parentID) => {});
+router.post('/create-folder', FolderController.create);
 
+/*// write api
 // update folder info
 router.post('/update-folder', (params, folderID) => {});
 

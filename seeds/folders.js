@@ -1,5 +1,12 @@
 const folderSeeds = [
   {
+    folder_id: 'user_1',
+    parent_folder_id: 'root',
+    user_id: 'user_1',
+    file_count: 4,
+    description: ''
+  },
+  {
     folder_id: '1',
     parent_folder_id: 'user_1',
     user_id: 'user_1',
