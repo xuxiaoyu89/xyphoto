@@ -4,13 +4,14 @@
 */
 const express = require('express');
 const cors = require('cors');
-const router = require('./routes/index.js');
 const logger = require('./lib/util/logger.js');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const path = require('path');
-
+const ExpressWs = require('express-ws')
 const app = express();
+ExpressWs(app);
+const router = require('./routes/index.js');
 
 app.use(cors());
 
