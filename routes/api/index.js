@@ -4,6 +4,9 @@ const FileController = require('../../controllers/file_controller.js');
 const FolderController = require('../../controllers/folder_controller.js');
 
 
+// add files
+router.ws('/add-files', FileController.add);
+
 // read api
 // get all the files in parent id
 router.post('/open', FolderController.open); // return all files and folders in folder with parentID
@@ -11,9 +14,6 @@ router.post('/open', FolderController.open); // return all files and folders in 
  
 // add a new folder
 router.post('/create-folder', FolderController.create);
-
-// add files
-router.ws('/add-files', FileController.add);
 
 /*// write api
 // update folder info
