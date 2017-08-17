@@ -1,0 +1,14 @@
+{
+    "aws": {
+    "config": {
+      "region": "us-east-1"
+    },
+    "s3": {
+      "publicUrl": "https://s3.amazonaws.com/xyphoto/",
+      "bucket": "xyphoto",
+      "files": {
+        "path": "files/"
+      }
+    }
+  }
+}
