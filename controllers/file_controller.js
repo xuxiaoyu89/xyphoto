@@ -15,7 +15,6 @@ const FileController = {
       } catch (err) {
         return handleFile(data, userID, folderID, ws);
       }
-      logger.info('message: ', message);
       userID = message.user_id;
       folderID = message.folder_id;
       ws.send(JSON.stringify({
@@ -36,9 +35,10 @@ async function handleFile(blob, userID, folderID, ws) {
 
   // upload file to s3
   file = new FileService(filePath, cleanupFunction);
-  let url = await file.uploadFile();
-  // save it in database
+  await file.getMetadata();
+  await file.uploadFile();
   await file.createFileModel(userID, folderID);
+  await file.processFile();
   message = {
     type: 'uploaded',
     file_info: file.getInfo()

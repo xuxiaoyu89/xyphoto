@@ -1,5 +1,5 @@
 {
-    "aws": {
+  "aws": {
     "config": {
       "region": "us-east-1"
     },
@@ -7,8 +7,12 @@
       "publicUrl": "https://s3.amazonaws.com/xyphoto/",
       "bucket": "xyphoto",
       "files": {
-        "path": "files/"
+        "path": "original/",
+        "thumbnail": "thumbnail/"
       }
+    },
+    "lambda": {
+      "image": "https://yceyo4vfzi.execute-api.us-east-1.amazonaws.com/prod/image"
     }
   }
 }
