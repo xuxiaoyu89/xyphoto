@@ -37,8 +37,8 @@ async function handleFile(blob, userID, folderID, ws) {
   file = new FileService(filePath, cleanupFunction);
   await file.getMetadata();
   await file.uploadFile();
-  await file.createFileModel(userID, folderID);
   await file.processFile();
+  await file.createFileModel(userID, folderID);
   message = {
     type: 'uploaded',
     file_info: file.getInfo()
